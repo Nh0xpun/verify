@@ -26,9 +26,6 @@
       <input :value="server_seed" @change="server_seed = $event.target.value" class="form-control" placeholder="Server Seed">
     </div>
     <div class="form-group">
-      <input :value="server_seed_hash" @change="server_seed_hash = $event.target.value" class="form-control" placeholder="Server Seed Hash">
-    </div>
-    <div class="form-group">
       <input :value="nonce" @change="nonce = $event.target.value" class="form-control" placeholder="Nonce">
     </div>
     <div class="form-group">
@@ -76,7 +73,7 @@
         </tbody>
       </table>
     </div>
-    <h5>SHA256(client_seed + server_seed + segments)</h5>
+    <h5>hmac_sha256(client_seed:nonce, server_seed)</h5>
     <div class="form-group" style="overflow-x: auto;">
       <table class="table table-sm table-bordered">
         <tbody>
