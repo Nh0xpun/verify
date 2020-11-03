@@ -10,6 +10,7 @@
     <script src="./lib/vue.min.js"></script>
     <script src="./lib/crypto-js.js"></script>
     <script src="./lib/tools.js"></script>
+    <script src="./lib/GoogleAnalytics.js"></script>
     <style>
       .table {
         font-size: 14px;
@@ -302,6 +303,7 @@
       computed: {},
       created() {
         this.doVerify();
+        ga('send', 'event', 'Baccarat', 'verify', this.initHash, {metric0: this.amount})
       },
       methods: {
         doVerify() {
